@@ -5,7 +5,7 @@ publish:
 
 # concat tcl script to lib/dcm.tcl
 merge:
-	bin/gendcm.tcl tcl
+	bin/genlib.tcl -cfg genlib.cfg -o lib/dcm.tcl 
 
 # split dcm.tcl to individual tcl file
 split:
