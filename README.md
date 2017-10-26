@@ -105,7 +105,7 @@ Usage:
 	% dcm_install <directoryPath>/<packageName>.releaseNote ...
 
 
-  Usage-3 (Package Name):
+  Usage-3 (Bundle List):
 
 	% dcm_install --BundleList <BundlePackageListFile>
 
