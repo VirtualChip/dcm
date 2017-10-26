@@ -1,0 +1,6 @@
+1. the cfg file may define exactly compatible_pdk and pdk_ver.
+
+2. the disk space check is not implement yet. 
+
+3. install patch is not in the flow yet.
+
