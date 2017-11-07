@@ -1,4 +1,0 @@
-CMDS: dcm_install --packageSrcDir packages --releaseNoteDir releaseNotes --targetLibDir techLib
-TIME: @20171107_092046 BEGIN dcm_install
-TIME: @20171107_092052 END   dcm_install
-========================================================
