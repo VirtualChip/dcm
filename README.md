@@ -1,4 +1,4 @@
-# Design Collateral Management Quick Start Guide V2017.1101
+# Design Collateral Management Quick Start Guide V2017.1108
 
 ## Specify following environment variables in the shell:
 
@@ -127,7 +127,7 @@ Example:
   Logfle:
 
 	dcm_install.log  =>  detail installation log 
-	$ICFDK_HOME/.dcm_install.csv            => CSV table to track pacakge installation info
+	$ICFDK_HOME/.dcm_install.summar         => pacakge installation tracking summary
 	$ICFDK_HOME/<NODE>/<UPF>/.dcm_packages  => package list which has been installed
 
 

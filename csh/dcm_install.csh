@@ -19,10 +19,10 @@ if ($?DCM_HOME == 0) then
 endif
 
 set log_file=dcm_install.log
-source $DCM_HOME/csh/dcm_log.csh
+source $DCM_HOME/csh/dcm_header.csh
 
-echo "CMDS: $prog $*" | tee $log_file
 echo "TIME: @`date +%Y%m%d_%H%M%S` BEGIN $prog" | tee -a $log_file
+echo "CMDS: $prog $*" | tee -a $log_file
 
 source $DCM_HOME/csh/dcm_option.csh
 
@@ -58,6 +58,7 @@ endif
 
 while ($menu_mode == 1)
    while ($menu_category == 1) 
+     clear
      echo "=============================================================="
      echo "INFO: Please specify Kit Category :"
      set kit_category = ""
@@ -65,9 +66,10 @@ while ($menu_mode == 1)
      echo -n "INPUT: Category = ($kit_category) ? " 
      set kit_category = "$<"
      set menu_category = 0
-   echo "=============================================================="
-   echo "INFO: Current releaseNote directory:"
-   tree $ICFDK_RELN/$kit_category 
+     echo $kit_category
+     echo "=============================================================="
+     echo "INFO: Current releaseNote directory: "
+     tree -d $ICFDK_RELN/$kit_category 
    end
 
    
@@ -82,7 +84,7 @@ while ($menu_mode == 1)
      echo "  $n) Go back to previous selection menu.."
      foreach dcm_file ($dcm_list)
         set n=`expr $n + 1`
-        echo "	$n) $dcm_file:t:r"
+        echo "	$n) $dcm_file:t:r	($dcm_file:h:t)"
      end
      echo "  q) quit.."
      
@@ -90,7 +92,7 @@ while ($menu_mode == 1)
      set sel_list = "$<"
      set menu_package = 0
    end
-#   echo $sel_list
+   echo $sel_list
    echo "========================================================"
 
    foreach sel ($sel_list)

@@ -14,8 +14,9 @@ BEGIN {
       dcm_install_root = "techLib"
   }
 
-  cmd_option = ENVIRON["DCM_INSTALL_OPTION"]
-  for (option in dc_option) {
+  dcm_install_option= ENVIRON["DCM_INSTALL_OPTION"]
+  split(dcm_install_option, dcm_options)
+  for (option in dcm_options) {
       if (option == "--verbose") {
          mode_verbose = 1
       } else if (option == "--info") {
@@ -149,7 +150,7 @@ ENDFILE {
      dcm_pkgs_err++
   } else {
      system("mkdir -p "dcm_install_dir)
-     system("echo \"`date +%Y%m%d%H%M%S` `whoami` % dcm_install "FILENAME"\" >> "dcm_install_root"/.dcm_install.csv")
+     system("echo \"`date +%Y%m%d%H%M%S` `whoami` % dcm_install "FILENAME"\" >> "dcm_install_root"/.dcm_install.summary")
      if (i in pkgs_base) {
          dcm_pkgs_base = dcm_pkgs_source"/"pkgs_base[i]".dcm"
          print "INFO: Installing base kit '"dcm_pkgs_base"' ..."

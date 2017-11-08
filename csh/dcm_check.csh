@@ -19,10 +19,10 @@ if ($?DCM_HOME == 0) then
 endif
 
 set log_file=dcm_install.log
-source $DCM_HOME/csh/dcm_log.csh
+source $DCM_HOME/csh/dcm_header.csh
 
-echo "CMDS: $prog $*" | tee $log_file
 echo "TIME: @`date +%Y%m%d_%H%M%S` BEGIN $prog" | tee -a $log_file
+echo "CMDS: $prog $*" | tee -a $log_file
 
 source $DCM_HOME/csh/dcm_option.csh
 

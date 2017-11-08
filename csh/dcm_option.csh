@@ -35,6 +35,13 @@ while ($parse_option)
         shift argv
       breaksw 
 
+      case "-P":
+      case "--packageTgtDir":
+        shift argv
+        setenv ICFDK_PKGS_TARGET $1
+        shift argv
+      breaksw 
+
       case "-r":
       case "--releaseNoteDir":
         shift argv
@@ -71,6 +78,8 @@ while ($parse_option)
         shift argv
         set dcm_log=$1
         shift argv
+      breaksw
+        
       default:
         set parse_option=0
       breaksw
@@ -78,15 +87,15 @@ while ($parse_option)
 end 
 
 if ($?ICFDK_PKGS == 0) then
-   setenv ICFDK_PKGS ""
+   setenv ICFDK_PKGS "."
 endif
 
 if ($?ICFDK_RELN == 0) then
-   setenv ICFDK_RELN "releaseNotes/"
+   setenv ICFDK_RELN "releaseNotes"
 endif
 
 if ($?ICFDK_HOME == 0) then
-   setenv ICFDK_HOME "techlib/"
+   setenv ICFDK_HOME "techLib"
 endif
 
 if ($?kit_category == 0) then

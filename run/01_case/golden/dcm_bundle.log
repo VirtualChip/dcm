@@ -1,0 +1,61 @@
+######################################################################
+# Design Collateral Management (DCM) Utility v2017.1108
+######################################################################
+TIME: @20171109_035231 BEGIN dcm_install
+CMDS: dcm_install --targetLibDir bundleLib --bundleList bundleFile.txt
+[1]: Reading packages/P1222.2PDK_r0.6.1.dcm
+    : Package file - packages/P1222.2PDK_r0.6.1.tgz
+INFO: Unpacking file 'packages/P1222.2PDK_r0.6.1.tgz' ...
+pdk222_r061/
+pdk222_r061/README
+
+------------------------------------------------------------------
+SUMMARY: Total 1/1 kits are installed.
+------------------------------------------------------------------
+[1]: Reading packages/P1222.2CTK_r0.6.1.dcm
+    : Package file - packages/P1222.2CTK_r0.6.1.tgz
+INFO: Unpacking file 'packages/P1222.2CTK_r0.6.1.tgz' ...
+ctk222_r061/
+ctk222_r061/README
+
+------------------------------------------------------------------
+SUMMARY: Total 1/1 kits are installed.
+------------------------------------------------------------------
+[1]: Reading packages/P1222.2ADF_r0.6.1.dcm
+    : Package file - packages/P1222.2ADF_r0.6.1.tgz
+INFO: Unpacking file 'packages/P1222.2ADF_r0.6.1.tgz' ...
+adf222_r061/
+adf222_r061/README
+
+------------------------------------------------------------------
+SUMMARY: Total 1/1 kits are installed.
+------------------------------------------------------------------
+[1]: Reading packages/MEMORY_lib222_2PRF_e.0.6.dcm
+    : Package file - packages/MEMORY_lib222_2PRF_e.0.6.tgz
+INFO: Unpacking file 'packages/MEMORY_lib222_2PRF_e.0.6.tgz' ...
+mem222_2prf_r061/
+mem222_2prf_r061/README
+
+------------------------------------------------------------------
+SUMMARY: Total 1/1 kits are installed.
+------------------------------------------------------------------
+[1]: Reading packages/STDCELL_lib222_6t_base_e.1.0.dcm
+    : Package file - packages/STDCELL_lib222_6t_base_e.1.0.tgz
+INFO: Unpacking file 'packages/STDCELL_lib222_6t_base_e.1.0.tgz' ...
+lib222_6t_base_e10/
+lib222_6t_base_e10/README
+
+------------------------------------------------------------------
+SUMMARY: Total 1/1 kits are installed.
+------------------------------------------------------------------
+[1]: Reading packages/GPIO_lib222_e.0.6.1.dcm
+    : Package file - packages/GPIO_lib222_e.0.6.1.tgz
+INFO: Unpacking file 'packages/GPIO_lib222_e.0.6.1.tgz' ...
+ip222_gpio_r061/
+ip222_gpio_r061/README
+
+------------------------------------------------------------------
+SUMMARY: Total 1/1 kits are installed.
+------------------------------------------------------------------
+TIME: @20171109_035240 END   dcm_install
+========================================================

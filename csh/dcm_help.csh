@@ -44,7 +44,7 @@ switch($1)
   case "testcase":
     echo "INFO: copy testcase to run/ .."
     echo "INFO: % cd run/01_case; make help"
-    cp -r $DCM_HOME/run run
+    cp -r $DCM_HOME/run .
     cd run/01_case; make help
     breaksw
 endsw

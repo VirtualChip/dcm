@@ -1,5 +1,6 @@
-#!gawk -f
+#!/usr/bin/gawk -f
 BEGIN {
+  print "[dcm_import]: BEGIN "
   dcm_pkgs_source = ENVIRON["ICFDK_PKGS"] 
   if (dcm_pkgs_source == "") {
       dcm_pkgs_source = "."
@@ -14,12 +15,15 @@ BEGIN {
       dcm_install_root = "techLib"
   }
 
-  cmd_option = ENVIRON["DCM_IMPORT_OPTION"]
-  for (option in dc_option) {
+  dcm_import_option= ENVIRON["DCM_PACK_OPTION"]
+  split(dcm_import_option, dcm_options)
+  for (option in dcm_options) {
       if (option == "--verbose") {
          mode_verbose = 1
       } else if (option == "--info") {
          mode_info = 1
+      } else if (option == "--skip_topdir") {
+         skip_topdir = 1
       } else {
       }
   }
@@ -102,7 +106,11 @@ ENDFILE {
      print "KIT MD5SUM    "kit_md5sum
      print "DCM END"
   }
-  reln_dir = kit_node"/"kit_upf"/"kit_group"/"kit_type
+  if (skip_topdir == 1) {
+     reln_dir = kit_node"/"kit_upf"/"kit_group"/"kit_type
+  } else {
+     reln_dir = kit_node"/"kit_upf"/"kit_group"/"kit_type"/"kit_topdir
+  }
   "basename "FILENAME" .dcm" | getline dcm_basename
   reln_file = reln_dir"/"dcm_basename".releaseNote"
 
@@ -120,7 +128,7 @@ ENDFILE {
      if ((base_missing > 0) || (file_missing > 0)) {
         print "ERROR: Skipping "reln_file" (missing pacakge)"
      } else {
-        print "    : Creating '"reln_file"' -- "kit_version" "kit_topdir
+        print "    : Creating '"reln_file"' ("kit_version")"
         system("mkdir -p "dcm_reln_root"/"reln_dir)
         system("cp -f "FILENAME" "dcm_reln_root"/"reln_file)
         dcm_created++
@@ -143,4 +151,6 @@ END {
   print "SUMMARY: Total "dcm_modified"/"dcm_skipped" existing dcm files are modified.(warning)"
   }
   print "------------------------------------------------------------------"
+  print "[dcm_import]: END"
+  print "--------------------------------------------------------"
 }
