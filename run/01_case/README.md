@@ -13,6 +13,7 @@ Step 0 - Check the collateral package and dcm config file :
 
 	==========================================
 	ICFDK_HOME = techLib
+	ICFDK_CFGS = configs
 	ICFDK_PKGS = packages
 	ICFDK_RELN = releaseNotes
 	==========================================
@@ -128,7 +129,7 @@ Step 1 - Import the dcm configuration file to releaseNotes directory :
 Step 2 - Install collateral package refer to releaseNotes directory :
 
 	==========================
-	% make install           <= go to interactive mode
+	% make install           <= enter interactive mode if there is no input file specifed
 	==========================
 
 	==============================================================

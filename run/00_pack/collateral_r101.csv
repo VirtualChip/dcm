@@ -1,16 +1,16 @@
-;
-;KIT	NODE	1222.2
-;KIT	UPF	x1r0
-;
-;REQUIRE KIT	1222.2/x1r0/FDK/PDK	TOPDIR	pdk222_r101
-;
+DCM	PACKAGE	1.0
+;DCM	MODE	TEST
 
-#-----	-------	----------------------	-------------------------------	---------------	---------------	-----------------------------------------
-#GROUP	TYPE	TOPDIR			SKU				VERSION		ORIGIN		DIRECTORY
-#-----	-------	----------------------	-------------------------------	---------------	---------------	-----------------------------------------
-FDK	PDK	pdk222_r101		P1222.2PDK_r1.0.1		-		-		collateral/pdk222_r101
-FDK	PDK	pdk222_r10HF4		P1222.2PDK_r1.0HF4		-		-		collateral/pdk222_r10HF4
-FDK	PDK	pdk222_r10hf7		P1222.2PDK_r1.0hf7		-		-		patch/pdk222_r10hf7
-FIP	STDCELL	lib222_7t_base_e20	STDCELL_lib222_7t_base_e.2.0	-		-		collateral/lib222_7t_base_e20
-#-----	-------	----------------------	-------------------------------	---------------	---------------	-----------------------------------------
+KIT	NODE	1222.2
+KIT	UPF	x1r0
+
+REQUIRE KIT	1222.2/x1r0/FDK/PDK	TOPDIR	pdk222_r101
+
+
+#-----	-----	-----	-----	-------	------------------------------	----------------------	---------------	--------------------	-----------------------------------------
+#PACK	NODE	UPF	GROUP	TYPE	SKU				TOPDIR			VERSION		REQUIRE			DIRECTORY
+#-----	-----	-----	-----	-------	------------------------------	----------------------	---------------	--------------------	-----------------------------------------
+FULL	1222.2	x1r0	FDK	PDK	P1222.2PDK_r1.0.1		pdk222_r101		r1.0.1		_			collateral/pdk222_r101
+FULL	1222.2	x1r0	FDK	PDK	P1222.2PDK_r1.0HF4		pdk222_r10HF4		r1.0HF4		_			collateral/pdk222_r10HF4
+FULL	1222.2	x1r0	FIP	STDCELL	STDCELL_lib222_7t_base_e.2.0	lib222_7t_base_e20	e2.0.0		P1222.2PDK_r1.0.1	collateral/lib222_7t_base_e20
 

@@ -1,4 +1,4 @@
-# Design Collateral Management Quick Start Guide V2017.1108
+# Design Collateral Management Quick Start Guide V2017.1116
 
 ## Specify following environment variables in the shell:
 
@@ -44,7 +44,7 @@ Example:
 	2. Copy the DCM config file to $ICFDK_RELN directory as a releaseNote file
 	   and categorize the releaseNote files based on the collateral category.
 
-  Eample:
+  Example:
 
 	releaseNotes/
 		|

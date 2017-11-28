@@ -44,7 +44,17 @@ switch($1)
   case "testcase":
     echo "INFO: copy testcase to run/ .."
     echo "INFO: % cd run/01_case; make help"
-    cp -r $DCM_HOME/run .
+    cp -fr $DCM_HOME/run .
     cd run/01_case; make help
     breaksw
+  case "project":
+    echo "INFO: copy project to project/ .."
+    cp -fr $DCM_HOME/project .
+    cd project; ls -al
+    breaksw
+  case "update":
+    (cd $DCM_HOME; svn update . ; svn ci . -m '$2')
+    breaksw
+  default:
+    echo "ERROR: $1 command not support"
 endsw

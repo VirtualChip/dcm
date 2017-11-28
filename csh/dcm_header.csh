@@ -26,6 +26,9 @@ while ($parse_option)
       breaksw
   endsw
 end 
+if ($?log_file == 0) then
+   set log_file = "dcm_header.log"
+endif
 if {(test -f $log_file)} then
    set n=1
    while {(test -f $log_file.$n)}
@@ -33,9 +36,10 @@ if {(test -f $log_file)} then
    end
    mv $log_file $log_file.$n
 endif
+printf "\033[1m\033[34m"
 echo -n "" | tee $log_file
 echo "######################################################################" | tee -a $log_file
-echo "# Design Collateral Management (DCM) Utility v2017.1108" | tee -a $log_file
+echo "# Design Collateral Management (DCM) Utility v2017.1116" | tee -a $log_file
 echo "######################################################################" | tee -a $log_file
-
+printf "\033[0m"
 exit 0
