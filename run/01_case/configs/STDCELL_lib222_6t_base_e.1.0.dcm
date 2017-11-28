@@ -10,8 +10,8 @@ KIT	TOPDIR	lib222_6t_base_e10
 KIT	SIZE	10000
 KIT     MD5SUM	11ba9bfa12c16459bc242c005c351b6f
 
-REQUIRE KIT	1222.2/x1r0/FDK/PDK	TOPDIR	pdk222_r061
-;REQUIRE KIT	1222.2/x1r0/FDK/PDK	VERSION	r0.6.1 
+;REQUIRE KIT	1222.2/x1r0/FDK/PDK	TOPDIR	pdk222_r061
+REQUIRE SKU	P1222.2PDK_r0.6.1
 
 ; If the kit size is huge, it could be split to multiple package files
 PACKAGE	FILE	STDCELL_lib222_6t_base_e.1.0.tgz  
