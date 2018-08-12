@@ -1,4 +1,4 @@
-# Design Collateral Management Quick Start Guide V2017.1116
+# Foundry Design Kit Management Quick Start Guide V2017.1116
 
 ## Specify following environment variables in the shell:
 
