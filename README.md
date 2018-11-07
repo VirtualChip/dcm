@@ -1,4 +1,4 @@
-# Foundry Design Kit Management Quick Start Guide V2017.1116
+# Foundry Design Kit Management Quick Start Guide V2018_1107a
 
 ## Specify following environment variables in the shell:
 
