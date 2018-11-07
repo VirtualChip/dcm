@@ -64,7 +64,7 @@ if ("$name_list" != "") then
      set dcm_list = ($dcm_list $dcm_file )
      echo ""
    end
-   $DCM_HOME/bin/gawk -f $DCM_HOME/csh/dcm_install.awk $dcm_list | tee -a $log_file
+   $DCM_HOME/bin/dcm_gawk -f $DCM_HOME/csh/dcm_install.awk $dcm_list | tee -a $log_file
    set menu_mode = 0
 else
    if ($?ICFDK_RELN == 0) then
@@ -168,7 +168,7 @@ while ($menu_mode == 1)
          set dcm_file = $ICFDK_RELN/$dcm_list[$sel]
          if {(test -f $dcm_file)} then
             echo "INFO: Install kit '$dcm_list[$sel]' .."
-            $DCM_HOME/bin/gawk -f $DCM_HOME/csh/dcm_install.awk $dcm_file | tee -a $log_file
+            $DCM_HOME/bin/dcm_gawk -f $DCM_HOME/csh/dcm_install.awk $dcm_file | tee -a $log_file
          else
             printf "\033[31mERROR: file not found - $dcm_file \033[0m\n"
          endif

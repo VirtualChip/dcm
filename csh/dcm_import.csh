@@ -50,7 +50,7 @@ set dcm_list = `ls -1 $ICFDK_CFGS/*.dcm`
 endif
 
 if ( "$dcm_list" != "") then
-$DCM_HOME/bin/gawk -f $DCM_HOME/csh/dcm_import.awk $dcm_list | tee -a $log_file
+$DCM_HOME/bin/dcm_gawk -f $DCM_HOME/csh/dcm_import.awk $dcm_list | tee -a $log_file
 endif
 
 

@@ -31,7 +31,7 @@ while ($1 != "" )
   shift argv
 end
 
-$DCM_HOME/bin/gawk -f $DCM_HOME/csh/dcm_pack.awk $file_list | tee -a $log_file
+$DCM_HOME/bin/dcm_gawk -f $DCM_HOME/csh/dcm_pack.awk $file_list | tee -a $log_file
 
 echo "TIME: @`date +%Y%m%d_%H%M%S` END   $prog" | tee -a $log_file
 echo "========================================================" | tee -a $log_file
