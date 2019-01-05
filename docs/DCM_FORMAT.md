@@ -47,7 +47,7 @@ REQUIRE – pre-install dependency rule :
 	KIT	<req_kit_type> VERSION <req_kit_version1>
 		Kit dependency check - based on kit version
 
-INSTALL - package installation procedure :
+PACKAGE - package installation procedure :
 
 	BASE	<base_kit_dcm>		[ <installed_kit_dir> ]
 		- If the collateral kit is a hot fix with partial patch, tool will need to install its base kit first
@@ -79,7 +79,7 @@ INSTALL - package installation procedure :
  	
 	PACKAGE	FILE	P1222.2PDK_r0.6.1.tgz
 	
-	DCM	END 	; below this line, all content are ignore by tool
+	END 	; below this line, all content are ignore by tool
 	
 	::::::::::::::
 	P1222.2PDK_r1.0hf7.dcm
@@ -105,5 +105,5 @@ INSTALL - package installation procedure :
 	PACKAGE FILE	P1222.2PDK_r1.0hf6.tgz
 	PACKAGE FILE	P1222.2PDK_r1.0hf7.tgz
 	
-	DCM	END
+	END
 
